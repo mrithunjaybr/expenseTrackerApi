@@ -20,6 +20,17 @@ public class UserResource {
     @Autowired
     UserService userService;
 
+    @PostMapping("/login")
+    public ResponseEntity<Map<String,String>> loginUser(@RequestBody Map<String,Object> userMap){
+        String email = (String) userMap.get("email");
+        String password = (String) userMap.get("password");
+        User user = userService.validateUser(email,password);
+        Map<String,String> map = new HashMap<>();
+        map.put("message","Logged In successfully!");
+        return new ResponseEntity<>(map,HttpStatus.OK);
+
+    }
+
     @PostMapping("/register")
     public ResponseEntity<Map<String,String>> register(@RequestBody Map<String,Object> userMap){
         String firstName = (String) userMap.get("firstName");
@@ -32,4 +43,6 @@ public class UserResource {
         return new ResponseEntity<>(map, HttpStatus.OK);
 
     }
+
+
 }
