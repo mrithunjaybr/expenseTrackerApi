@@ -1,12 +1,14 @@
 Make sure local db instance of postgres is running.
 
-
-
 go to project folder in cmd.
 use "psql -U postgres" command to get into psql mode.
 type "\i filename.sql" to connect "expensetrackerdb" to "postgres" username.
 
 bcrypt is used for hashing password and is added in pom.xml .
+
+why do we need to use tokens when password is encrypted?
+It ensures more safety and only when the user puts in the token, they can access
+important resources.
 
 
 
