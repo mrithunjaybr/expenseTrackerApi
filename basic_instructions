@@ -10,6 +10,6 @@ why do we need to use tokens when password is encrypted?
 It ensures more safety and only when the user puts in the token, they can access
 important resources.
 
-
+Add token in "Bearer Token"
 
 

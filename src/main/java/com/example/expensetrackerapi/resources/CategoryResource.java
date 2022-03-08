@@ -15,4 +15,10 @@ public class CategoryResource {
         int userId = (Integer) request.getAttribute("userId");
         return "Authenticated UserID: " + userId;
     }
+    @GetMapping("/myaccountinfo")
+    public String getAccountName(HttpServletRequest request){
+        String name = (String) request.getAttribute("email");
+        return "Account Name:" + name;
+    }
+
 }
